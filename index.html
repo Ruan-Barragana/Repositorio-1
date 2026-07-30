@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menos Crise, Mais Calma — Guia prático para crises e meltdowns no autismo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F5F7F1;
+    --bg-alt: #ECE7DA;
+    --ink: #22333B;
+    --ink-soft: #4C5D60;
+    --primary: #3F6259;
+    --primary-dark: #2A453E;
+    --accent: #C97B8C;
+    --accent-soft: #F1D9DE;
+    --card-bg: #FFFFFF;
+    --storm: #3E4E55;
+    --max: 780px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    color:var(--ink);
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5em;
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  section{ padding:88px 0; }
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--primary);
+    margin-bottom:18px;
+    display:block;
+  }
+
+  /* HERO */
+  #hero{
+    position:relative;
+    padding:64px 0 96px;
+    overflow:hidden;
+    background:var(--storm);
+  }
+  #hero .wrap{ position:relative; z-index:2; text-align:center; }
+  #hero .eyebrow{ color:#fff; opacity:.85; }
+  #hero h1{
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    color:#fff;
+    max-width:14ch;
+    margin-left:auto; margin-right:auto;
+  }
+  #hero .sub{
+    font-size:1.15rem;
+    color:#fff;
+    opacity:.92;
+    max-width:46ch;
+    margin:0 auto 34px;
+  }
+  #hero .hook{
+    font-family:'Fraunces', serif;
+    font-size:1.25rem;
+    font-style:italic;
+    color:#F1D9DE;
+    max-width:36ch;
+    margin:0 auto 14px;
+  }
+  .price-anchor{
+    color:#fff; font-family:'Work Sans',sans-serif; font-size:1rem;
+    margin:0 0 14px;
+  }
+  .price-anchor span{ text-decoration:line-through; opacity:.6; }
+  .price-anchor strong{ color:var(--accent-soft); font-size:1.15rem; }
+  .price-anchor.dark{ color:var(--ink); }
+  .price-anchor.dark span{ opacity:.5; }
+  .price-anchor.dark strong{ color:var(--accent); }
+
+  #cta-meio{ background:var(--bg); text-align:center; padding:60px 0; }
+  #cta-meio .cta-meio-text{
+    font-family:'Fraunces', serif; font-size:1.35rem; color:var(--primary-dark);
+    max-width:38ch; margin:0 auto 18px; line-height:1.4;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:600;
+    font-size:1.05rem;
+    padding:16px 36px;
+    border-radius:100px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 8px 24px rgba(201,123,140,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(201,123,140,.45); }
+  .btn:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
+  .trust-line{
+    margin-top:16px;
+    font-size:.9rem;
+    color:#fff;
+    opacity:.8;
+  }
+
+  .sky{ width:180px; height:90px; margin:0 auto 8px; opacity:.6; }
+  .sky svg{ width:100%; height:100%; display:block; }
+  .cloud{ animation: drift 22s ease-in-out infinite; }
+  .cloud.c2{ animation-duration:28s; animation-delay:-6s; }
+  @media (prefers-reduced-motion:reduce){ .cloud{ animation:none; } }
+  @keyframes drift{
+    0%,100%{ transform:translateX(0); }
+    50%{ transform:translateX(18px); }
+  }
+
+  /* IDENTIFICAÇÃO */
+  #identifica{ background:var(--bg); }
+  #identifica h2{ font-size:1.9rem; text-align:center; max-width:22ch; margin:0 auto 12px; }
+  #identifica .lead{ text-align:center; color:var(--ink-soft); max-width:52ch; margin:0 auto 48px; }
+  .pain-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+  }
+  @media(max-width:620px){ .pain-grid{ grid-template-columns:1fr; } }
+  .pain-card{
+    background:var(--card-bg);
+    border-radius:16px;
+    padding:24px 22px;
+    font-size:1.02rem;
+    color:var(--ink);
+    border:1px solid rgba(0,0,0,.05);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .pain-card.will-reveal{ opacity:0; transform:translateY(14px); }
+  .pain-card.in{ opacity:1; transform:none; }
+  .pain-card b{ color:var(--primary); }
+  .closing-line{
+    text-align:center;
+    margin-top:40px;
+    font-family:'Fraunces', serif;
+    font-size:1.3rem;
+    color:var(--primary-dark);
+    max-width:38ch;
+    margin-left:auto; margin-right:auto;
+  }
+
+  /* HONESTIDADE */
+  #honestidade{ background:var(--bg-alt); }
+  #honestidade .wrap{ max-width:640px; text-align:center; }
+  #honestidade h2{ font-size:1.7rem; }
+  #honestidade p{ color:var(--ink-soft); }
+
+  /* MÓDULOS */
+  #modulos{ background:var(--bg); }
+  #modulos h2{ text-align:center; font-size:1.9rem; margin-bottom:8px; }
+  #modulos .lead{ text-align:center; color:var(--ink-soft); margin-bottom:48px; }
+  .mod-list{ display:flex; flex-direction:column; gap:0; }
+  .mod-item{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:20px;
+    padding:22px 0;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .mod-item.will-reveal{ opacity:0; transform:translateY(10px); }
+  .mod-item.in{ opacity:1; transform:none; }
+  .mod-item:last-child{ border-bottom:none; }
+  .mod-num{
+    font-family:'Fraunces', serif;
+    font-size:1.6rem;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .mod-item h3{ font-size:1.1rem; margin:0 0 4px; }
+  .mod-item p{ margin:0; color:var(--ink-soft); font-size:.98rem; }
+
+  /* INCLUSO */
+  #incluso{ background:var(--primary-dark); color:#fff; }
+  #incluso .eyebrow{ color:var(--accent-soft); }
+  #incluso h2{ color:#fff; text-align:center; font-size:1.9rem; margin-bottom:48px; }
+  .incluso-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  @media(max-width:620px){ .incluso-grid{ grid-template-columns:1fr; } }
+  .incluso-card{ position:relative; }
+  .bonus-tag{
+    position:absolute; top:-12px; right:20px;
+    background:var(--accent); color:#fff; font-family:'Work Sans',sans-serif;
+    font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    padding:5px 12px; border-radius:100px;
+  }
+  .incluso-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:16px;
+    padding:26px;
+  }
+  .incluso-card svg{ width:38px; height:38px; margin-bottom:14px; }
+  .incluso-card h3{ color:#fff; font-size:1.15rem; }
+  .incluso-card p{ color:rgba(255,255,255,.8); margin:0; font-size:.96rem; }
+
+  /* PARA QUEM */
+  #paraquem{ background:var(--bg); text-align:center; }
+  #paraquem .wrap{ max-width:640px; }
+  #paraquem h2{ font-size:1.7rem; }
+  .tags{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:24px; }
+  .tag{
+    background:var(--accent-soft);
+    color:var(--primary-dark);
+    padding:9px 18px;
+    border-radius:100px;
+    font-size:.92rem;
+    font-weight:500;
+  }
+
+  /* GARANTIA */
+  #garantia{ background:var(--bg-alt); text-align:center; }
+  #garantia .wrap{ max-width:560px; }
+  .badge{
+    width:74px; height:74px;
+    border-radius:50%;
+    background:var(--primary);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+  }
+  .badge svg{ width:34px; height:34px; }
+  #garantia h2{ font-size:1.6rem; }
+  #garantia p{ color:var(--ink-soft); }
+
+  /* FAQ */
+  #faq{ background:var(--bg); }
+  #faq h2{ text-align:center; font-size:1.9rem; margin-bottom:40px; }
+  details{
+    background:var(--card-bg);
+    border:1px solid rgba(0,0,0,.07);
+    border-radius:14px;
+    padding:18px 22px;
+    margin-bottom:12px;
+  }
+  summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:1.02rem;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::after{
+    content:'+';
+    font-size:1.4rem;
+    color:var(--accent);
+    font-weight:400;
+    margin-left:12px;
+  }
+  details[open] summary::after{ content:'–'; }
+  details p{ color:var(--ink-soft); margin:14px 0 2px; font-size:.98rem; }
+
+  /* CTA FINAL */
+  #cta-final{
+    background:var(--primary-dark);
+    color:#fff;
+    text-align:center;
+  }
+  #cta-final h2{ color:#fff; font-size:2rem; max-width:16ch; margin:0 auto 14px; }
+  #cta-final p{ color:rgba(255,255,255,.85); max-width:42ch; margin:0 auto 30px; }
+  .price-line{ font-family:'Fraunces', serif; font-size:2.6rem; color:#fff; margin-bottom:6px; }
+  .price-line span{ font-size:1.1rem; color:rgba(255,255,255,.6); text-decoration:line-through; margin-right:10px; font-family:'Work Sans', sans-serif;}
+  .promo-tag{ color:var(--accent-soft); font-family:'Work Sans',sans-serif; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; font-weight:600; margin-bottom:26px; }
+
+  footer{
+    padding:36px 0;
+    text-align:center;
+    font-size:.82rem;
+    color:var(--ink-soft);
+    background:var(--bg);
+  }
+  footer .wrap{ max-width:560px; }
+
+  .sticky-cta{
+    display:none;
+    position:fixed; bottom:0; left:0; right:0; z-index:50;
+    background:var(--primary-dark);
+    padding:12px 16px;
+    align-items:center; justify-content:space-between; gap:12px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.25);
+  }
+  .sticky-cta .price{ color:#fff; font-family:'Fraunces',serif; font-size:1.15rem; }
+  .sticky-cta .btn{ padding:11px 22px; font-size:.92rem; box-shadow:none; }
+  @media(max-width:680px){
+    .sticky-cta{ display:flex; }
+    body{ padding-bottom:74px; }
+  }
+</style>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<script>
+  window.pixelId = "6a5c0646676623f0cd1ad05e";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+<body>
+
+<section id="hero">
+  <div class="sky" aria-hidden="true">
+    <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
+      <circle cx="400" cy="120" r="58" fill="#F6E7B8" opacity="0.85"/>
+      <g class="cloud" fill="#EDEEF0" opacity="0.9">
+        <ellipse cx="230" cy="150" rx="70" ry="34"/>
+        <ellipse cx="285" cy="135" rx="55" ry="30"/>
+        <ellipse cx="175" cy="160" rx="50" ry="26"/>
+      </g>
+      <g class="cloud c2" fill="#F7F1E4" opacity="0.85">
+        <ellipse cx="560" cy="180" rx="80" ry="36"/>
+        <ellipse cx="620" cy="165" rx="55" ry="28"/>
+        <ellipse cx="500" cy="190" rx="48" ry="24"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow">Para pais, mães e educadores de crianças autistas</span>
+    <p class="hook">Existem sinais que aparecem ANTES da crise explodir — e quase ninguém percebe.</p>
+    <h1>Menos Crise, Mais Calma</h1>
+    <p class="sub">Guia prático para entender, prevenir e atravessar as crises e meltdowns do seu filho — com mais confiança e menos culpa no dia a dia.</p>
+    <p class="price-anchor">De <span>R$147</span> por <strong>R$47</strong> — promoção de lançamento</p>
+    <a href="https://pay.kiwify.com.br/861Ejgm" class="btn">Quero o guia agora</a>
+    <p class="trust-line">🔒 Garantia incondicional de 7 dias · Acesso imediato após a compra</p>
+  </div>
+</section>
+
+<section id="identifica">
+  <div class="wrap">
+    <h2>Isso já aconteceu com você?</h2>
+    <p class="lead">Se alguma dessas cenas parece familiar, este guia foi escrito pensando exatamente em você.</p>
+    <div class="pain-grid">
+      <div class="pain-card"><b>Uma crise no meio do mercado</b>, e todo mundo olhando, e você sem saber o que fazer.</div>
+      <div class="pain-card"><b>Mais uma noite maldormida</b> — dele e sua — sem entender bem o porquê.</div>
+      <div class="pain-card"><b>Um jantar que vira batalha</b>, porque ele só aceita as mesmas 4 ou 5 coisas.</div>
+      <div class="pain-card">Aquele momento em que você se pergunta: <b>"será que estou fazendo certo?"</b></div>
+    </div>
+    <p class="closing-line">Você não está sozinha(o) nisso — e existe um caminho mais calmo.</p>
+  </div>
+</section>
+
+<section id="honestidade">
+  <div class="wrap">
+    <span class="eyebrow">Antes de continuar</span>
+    <h2>O que este guia não promete</h2>
+    <p>Este guia não promete acabar com as crises — ninguém pode prometer isso, e vale desconfiar de quem promete. Ele também não substitui terapia (fonoaudiologia, terapia ocupacional, psicologia, ABA). O que ele entrega é entendimento e um plano de ação prático para os momentos entre uma sessão e outra — que é onde a maior parte da vida realmente acontece.</p>
+  </div>
+</section>
+
+<section id="modulos">
+  <div class="wrap">
+    <h2>O que você vai aprender</h2>
+    <p class="lead">Um caminho estruturado, do entendimento à prática do dia a dia.</p>
+    <div class="mod-list">
+      <div class="mod-item"><span class="mod-num">01</span><div><h3>Entendendo a crise</h3><p>A diferença entre birra, meltdown e shutdown — e por que seu filho reage assim.</p></div></div>
+      <div class="mod-item"><span class="mod-num">02</span><div><h3>Mapeando os gatilhos</h3><p>Como identificar, com uma ferramenta simples, o que antecede uma crise no seu filho.</p></div></div>
+      <div class="mod-item"><span class="mod-num">03</span><div><h3>Prevenção no dia a dia</h3><p>Rotina, transições e um kit sensorial para reduzir a frequência das crises.</p></div></div>
+      <div class="mod-item"><span class="mod-num">04</span><div><h3>Durante a crise</h3><p>O passo a passo do que fazer — e o que evitar — nos momentos mais difíceis.</p></div></div>
+      <div class="mod-item"><span class="mod-num">05</span><div><h3>Depois da crise</h3><p>Como cuidar da recuperação — do seu filho, e de você também.</p></div></div>
+      <div class="mod-item"><span class="mod-num">06</span><div><h3>Ferramentas prontas</h3><p>Scripts de frases, checklist de bolso e os cartões visuais de emoção.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-meio">
+  <div class="wrap">
+    <p class="cta-meio-text">Tudo isso já está pronto para você aplicar hoje — sem precisar esperar a próxima consulta.</p>
+    <p class="price-anchor dark">De <span>R$147</span> por <strong>R$47</strong> — promoção de lançamento</p>
+    <a href="https://pay.kiwify.com.br/861Ejgm" class="btn">Quero o guia agora</a>
+  </div>
+</section>
+
+<section id="incluso">
+  <div class="wrap">
+    <span class="eyebrow">O que está incluso</span>
+    <h2>Tudo pronto para aplicar hoje mesmo</h2>
+    <div class="incluso-grid">
+      <div class="incluso-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F1D9DE" stroke-width="1.6"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 16h8M8 10h4"/></svg>
+        <h3>E-book completo</h3>
+        <p>Introdução + 6 capítulos + fechamento, em PDF, para ler no celular ou imprimir.</p>
+      </div>
+      <div class="incluso-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F1D9DE" stroke-width="1.6"><circle cx="9" cy="9" r="6"/><circle cx="17" cy="9" r="6" opacity=".5"/><path d="M4 21c1-3 4-5 8-5s7 2 8 5"/></svg>
+        <h3>64 cartões visuais de emoção</h3>
+        <p>32 no estilo menino e 32 no estilo menina, prontos para imprimir e usar com a criança.</p>
+      </div>
+      <div class="incluso-card">
+        <span class="bonus-tag">Bônus extra</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F1D9DE" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        <h3>Cartão de Emergência</h3>
+        <p>Checklist de 1 página para imprimir e colar na geladeira — o resumo rápido para o momento de crise.</p>
+      </div>
+      <div class="incluso-card">
+        <span class="bonus-tag">Bônus extra</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F1D9DE" stroke-width="1.6"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <h3>Kit de Rotina Visual</h3>
+        <p>20 cartões ilustrados para montar a agenda visual do dia — acordar, escola, banho, dormir e mais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="paraquem">
+  <div class="wrap">
+    <span class="eyebrow">Para quem é</span>
+    <h2>Feito para quem vive isso todos os dias</h2>
+    <div class="tags">
+      <span class="tag">Mães atípicas</span>
+      <span class="tag">Pais atípicos</span>
+      <span class="tag">Avós e cuidadores</span>
+      <span class="tag">Educadores e professores</span>
+    </div>
+  </div>
+</section>
+
+<section id="garantia">
+  <div class="wrap">
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
+    </div>
+    <h2>Garantia incondicional de 7 dias</h2>
+    <p>Se por qualquer motivo você sentir que não é para você, é só solicitar o reembolso — sem perguntas.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>Isso substitui a terapia do meu filho?</summary>
+      <p>Não. O guia foi pensado para te dar autonomia e confiança no dia a dia, entre uma sessão e outra — nunca para substituir o acompanhamento de fonoaudiologia, terapia ocupacional, psicologia ou ABA.</p>
+    </details>
+    <details>
+      <summary>Funciona mesmo se ele for não verbal?</summary>
+      <p>Sim. As estratégias de prevenção, os cartões visuais e o passo a passo durante a crise não dependem de comunicação falada.</p>
+    </details>
+    <details>
+      <summary>Em quanto tempo eu vejo diferença?</summary>
+      <p>Cada criança responde num ritmo diferente. A proposta aqui é progresso possível — menos intensidade, mais entendimento dos sinais — não uma transformação da noite para o dia.</p>
+    </details>
+    <details>
+      <summary>Já tentei de tudo e nada funcionou. Vale a pena mesmo assim?</summary>
+      <p>Esse guia não é uma fórmula mágica nova — é um caminho estruturado e prático, pensado para ser aplicado aos poucos, no seu ritmo, sem exigir que você mude tudo de uma vez.</p>
+    </details>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="wrap">
+    <h2>Menos crise, mais calma começa agora</h2>
+    <p>E-book completo + 64 cartões visuais de emoção, prontos para usar hoje.</p>
+    <div class="price-line"><span>R$147</span>R$47</div>
+    <p class="promo-tag">Promoção de lançamento</p>
+    <a href="https://pay.kiwify.com.br/861Ejgm" class="btn">Quero começar agora</a>
+    <p class="trust-line">Acesso imediato após a compra · Garantia de 7 dias</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Menos Crise, Mais Calma é um material educativo e não substitui acompanhamento médico, terapêutico ou profissional especializado.
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <span class="price">R$47</span>
+  <a href="https://pay.kiwify.com.br/861Ejgm" class="btn">Quero o guia agora</a>
+</div>
+
+<script>
+  // Reveal on scroll (progressive enhancement — elements are visible by default;
+  // JS only adds the fade-in if IntersectionObserver is supported)
+  if('IntersectionObserver' in window){
+    const revealEls = document.querySelectorAll('.pain-card, .mod-item');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold:.2 });
+    revealEls.forEach(el=>{ el.classList.add('will-reveal'); io.observe(el); });
+  }
+</script>
+
+</body>
+</html>
